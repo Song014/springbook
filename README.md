@@ -61,5 +61,5 @@
  
  ## 결합도
  
- * polymorphism.TVUser.java 확인
+ * [TVUser.java](./src/main/java/polymorphism/TVUser.java)
  
