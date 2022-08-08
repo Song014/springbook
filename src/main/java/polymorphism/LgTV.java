@@ -1,6 +1,6 @@
 package polymorphism;
 
-public class LgTV {
+public class LgTV implements TV{
 	public void powerOn() {
 		System.out.println("LgTV---전원킨다.");
 	}
