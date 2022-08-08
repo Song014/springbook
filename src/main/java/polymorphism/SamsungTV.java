@@ -1,6 +1,13 @@
 package polymorphism;
 
 public class SamsungTV implements TV{
+	
+	
+	public SamsungTV() {
+		super();
+		// TODO Auto-generated constructor stub
+		System.out.println("===> SamsungTV 객체생성");
+	}
 	public void powerOn() {
 		System.out.println("SamsungTv---전원킨다.");
 	}

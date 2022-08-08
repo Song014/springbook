@@ -1,6 +1,22 @@
 # springbook
 
-프로젝트 처음만들었을때 할 일
+## 목차
+ 
+* [springbook](#springbook)
+	* [목차](#목차)
+	* [용어](#용어)
+	* [수행 순서](#수행-순서)
+	* [결합도](#결합도)
+	* [빈](#빈)
+
+## 용어
+
+ 1. IOC(제어의 역전) Inversion of Control
+ 2. DI(의존주입) Dependecy injection
+ 3. AOP(공통관심사 OR 횡단관심사) Aspect Oriented Programming
+ 4. BEAN(강낭콩) 스프링에서 객체를 빈이라 부름
+
+## 수행 순서
 1. encoding 설정
   * window > prefer... > encoding 검색 > utf-8로 변경
   * xml 수정   
@@ -63,3 +79,12 @@
  
  * [TVUser.java](./src/main/java/polymorphism/TVUser.java)
  
+
+ ## 빈
+
+1. 리소스 영역에 [application.xml](./src/main/resources/applicationContext.xml) 생성후 빈 추가
+
+2. [TVUser](./src/main/java/polymorphism/TVUser.java) 파일에서 빈 팩토리 호출해서 사용 기본적으로 싱글톤 패턴으로 사용됨
+
+* 번외: 싱글톤패턴 사용하기 싫을때 [application.xml](./src/main/resources/applicationContext.xml)
+   `scope="prototype"` 스코프 속성을 사용해 바꿀수 있음
