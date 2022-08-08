@@ -21,7 +21,7 @@ public class TVUser {
 //		TV tv = (TV)factory.getBean("samsung"); // TVUser클래스는 SamsungTV,LgTV 클래스의 존재를 모른다
 //		TV tv = (TV)factory.getBean("lg");
 
-		// 4  예전엔 직접 만들어야 했지만 스프링프레임워크에서 대신 만들어주기 때문에 안만들어도 됨
+		// 4  예전엔 팩토리를 직접 만들어야 했지만 스프링프레임워크에서 대신 만들어주기 때문에 안만들어도 됨
 		
 		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml"); // 싱글톤 패턴임
 		TV tv = (TV)factory.getBean("samsungTV");
