@@ -9,6 +9,7 @@
 	- [결합도](#결합도)
 	- [빈](#빈)
 	- [의존 주입](#의존-주입)
+		- [참고 자료](#참고-자료)
 
 ## 용어
 
@@ -96,3 +97,10 @@
 
 ## 의존 주입
 
+
+
+
+### 참고 자료
+
+* [의존성 주입 관련](https://codevang.tistory.com/312)
+* [의존관계 쉽게 이해하기](https://tecoble.techcourse.co.kr/post/2021-04-27-dependency-injection/)
