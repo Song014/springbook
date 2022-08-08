@@ -66,10 +66,10 @@
   	```
 2. 톰캣 서버 연동
 3. pom.xml 버전 체크
-  * 자바버전 1.8
-  * 스프링프레임워크 5.0.7
-  * junit 4.12
-  * maven 플러그인 1.8
+	* 자바버전 1.8
+	* 스프링프레임워크 5.0.7
+	* junit 4.12
+	* maven 플러그인 1.8
   
  4. maven 디펜던시 추가 안될때 Window - Preferences - Maven > 다운로드 관련 다 체크
  5. [db테스트를 위한 sql 생성](./src/main/resources/springbook.sql) 
