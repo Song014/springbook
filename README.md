@@ -1,18 +1,22 @@
 # springbook
 
 ## 목차
- 
-* [springbook](#springbook)
-	* [목차](#목차)
-	* [용어](#용어)
-	* [수행 순서](#수행-순서)
-	* [결합도](#결합도)
-	* [빈](#빈)
+
+- [springbook](#springbook)
+	- [목차](#목차)
+	- [용어](#용어)
+	- [수행 순서](#수행-순서)
+	- [결합도](#결합도)
+	- [빈](#빈)
+	- [의존 주입](#의존-주입)
 
 ## 용어
 
  1. IOC(제어의 역전) Inversion of Control
  2. DI(의존주입) Dependecy injection
+     * 생성자 인젝션
+     * setter 인젝션
+     * 멤버변수 인젝션 
  3. AOP(공통관심사 OR 횡단관심사) Aspect Oriented Programming
  4. BEAN(강낭콩) 스프링에서 객체를 빈이라 부름
 
@@ -88,3 +92,7 @@
 
 * 번외: 싱글톤패턴 사용하기 싫을때 [application.xml](./src/main/resources/applicationContext.xml)
    `scope="prototype"` 스코프 속성을 사용해 바꿀수 있음
+
+
+## 의존 주입
+

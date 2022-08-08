@@ -26,12 +26,12 @@ public class TVUser {
 		AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml"); // 싱글톤 패턴임
 		TV tv = (TV)factory.getBean("samsungTV");
 		TV tv1 = (TV)factory.getBean("samsungTV");
-		TV tv2 = (TV)factory.getBean("samsungTV");
+		TV tv2= (TV)factory.getBean("samsungTV");
 		
 		tv.powerOn();
 		tv.powerOff();
 		tv.volumeUp();
-//		tv.volumeDown();
+		tv.volumeDown();
 		
 		factory.close();
 	}
