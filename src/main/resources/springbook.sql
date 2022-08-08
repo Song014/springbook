@@ -35,13 +35,14 @@ CREATE TABLE board (
     PRIMARY KEY ( seq )
 );
 
+create sequence board_seq increment by 1 start with 0 MAXVALUE 9999999 MINVALUE 0;
 INSERT INTO board (
     seq,
     title,
     writer,
     content
 ) VALUES (
-    1,
+    board_seq.NEXTVAL,
     '가입인사',
     '관리자',
     '잘부탁합니다...'
@@ -51,3 +52,5 @@ SELECT
     *
 FROM
     board;
+
+COMMIT;
