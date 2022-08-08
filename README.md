@@ -3,8 +3,8 @@
 프로젝트 처음만들었을때 할 일
 1. encoding 설정
   * window > prefer... > encoding 검색 > utf-8로 변경
-  * xml 수정 
-  	```
+  * xml 수정   
+  	``` 
 	<!-- 캐릭터 인코딩 필터 설정  -->
 	<!-- 컨트롤러에서 response.setCharacterEncoding()를매번 실행하지 않기 위해 서블릿 필터를 이용해 처리  -->
 	<filter>
@@ -54,6 +54,9 @@
   * 스프링프레임워크 5.0.7
   * junit 4.12
   * maven 플러그인 1.8
+  
+ 4. maven 디펜던시 추가 안될때 Window - Preferences - Maven > 다운로드 관련 다 체크
+ 5. [db테스트를 위한 sql 생성](./src/main/resources/springbook.sql) 
   
  
  
