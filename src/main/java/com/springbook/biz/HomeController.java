@@ -1,6 +1,6 @@
 package com.springbook.biz;
 
-import java.util.Locale;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,25 +11,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.springbook.biz.board.BoardService;
+import com.springbook.biz.board.BoardVO;
 
-/**
- * Handles requests for the application home page.
- */
+
 @Controller
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	@Autowired
+	BoardService bs;
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home(Model model) {
+
 		
-		
-		bs.insertBoard(null);
+		List<BoardVO> boardList = bs.getBoardList();
+		model.addAttribute("boardList",boardList);
+		for(BoardVO list : boardList) {
+			System.out.println(list);
+			
+		}
 		
 		
 		return "home";
