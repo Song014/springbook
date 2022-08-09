@@ -1,6 +1,6 @@
 # springbook
 
-## 목차
+## 목차[#](#springbook)
 - [용어](#용어)
 - [수행 순서](#수행-순서)
 - [결합도](#결합도)
@@ -8,7 +8,7 @@
 - [의존 주입](#의존-주입)
 - [참고 자료](#참고-자료)
 
-## 용어
+## 용어[#](#springbook)
 
  1. IOC(제어의 역전) Inversion of Control
  2. DI(의존주입) Dependecy injection
@@ -18,7 +18,7 @@
  3. AOP(공통관심사 OR 횡단관심사) Aspect Oriented Programming
  4. BEAN(강낭콩) 스프링에서 객체를 빈이라 부름
 
-## 수행 순서
+## 수행 순서[#](#springbook)
 1. encoding 설정
   * window > prefer... > encoding 검색 > utf-8로 변경
   * xml 수정   
@@ -77,12 +77,12 @@
  5. [db테스트를 위한 sql 생성](./src/main/resources/springbook.sql) 
   
  
- ## 결합도
+ ## 결합도[#](#springbook)
  
  * [TVUser.java](./src/main/java/polymorphism/TVUser.java)
  
 
- ## 빈
+ ## 빈[#](#springbook)
 
 1. 리소스 영역에 [application.xml](./src/main/resources/applicationContext.xml) 생성후 빈 추가
 
@@ -92,7 +92,7 @@
    `scope="prototype"` 스코프 속성을 사용해 바꿀수 있음
 
 
-## 의존 주입
+## 의존 주입[#](#springbook)
 
 1. xml 방식
 	![applicationContext.xml](./markdown/img/CunsturtorDI.png)
@@ -110,13 +110,13 @@
 	* Controller : mvc 레이어
 	
 	
-## DB 연동
+## DB 연동[#](#springbook)
 
 jdbc 라이브러리 java bulid path에 추가
 deployment assembly 에서도 jdbc 파일 추가
 
 
-### 참고 자료
+### 참고 자료[#](#springbook)
 
 * [의존성 주입 관련](https://codevang.tistory.com/312)
 * [의존관계 쉽게 이해하기](https://tecoble.techcourse.co.kr/post/2021-04-27-dependency-injection/)
