@@ -98,6 +98,9 @@
 
 ![applicationContext.xml](./markdown/img/CunsturtorDI.png)
 
+*새터
+property name="새터" ref="동일>/<pro
+
 
 ### 참고 자료
 
