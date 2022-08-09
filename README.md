@@ -105,6 +105,17 @@
 
 	* AutoWired
 	* Qualifier
+	
+	* Component : 총
+	* Service : 비지니스 
+	* Repository : 데이터레이어
+	* Controller : mvc 레이어
+	
+	
+## DB 연동
+
+jdbc 라이브러리 java bulid path에 추가
+deployment assembly 에서도 jdbc 파일 추가
 
 
 ### 참고 자료
@@ -112,3 +123,4 @@
 * [의존성 주입 관련](https://codevang.tistory.com/312)
 * [의존관계 쉽게 이해하기](https://tecoble.techcourse.co.kr/post/2021-04-27-dependency-injection/)
 * https://cbw1030.tistory.com/m/309
+* https://hanna97.tistory.com/entry/Spring-MVC%EC%9D%98-%EA%B8%B0%EB%B3%B8%EA%B5%AC%EC%84%B13-tier
