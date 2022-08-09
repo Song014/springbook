@@ -96,10 +96,15 @@
 
 ## 의존 주입
 
-![applicationContext.xml](./markdown/img/CunsturtorDI.png)
+1. xml 방식
+	![applicationContext.xml](./markdown/img/CunsturtorDI.png)
+	
+	* 새터
+	사진찍어야됨
+2. 어노테이션 방식
 
-*새터
-property name="새터" ref="동일>/<pro
+	* AutoWired
+	* Qualifier
 
 
 ### 참고 자료
