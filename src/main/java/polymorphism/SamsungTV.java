@@ -1,8 +1,11 @@
 package polymorphism;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Setter;
 
 @Setter
+@Component
 public class SamsungTV implements TV{
 	
 //    private SonySpeaker speaker;
@@ -14,17 +17,17 @@ public class SamsungTV implements TV{
 		// TODO Auto-generated constructor stub
 		System.out.println("===> SamsungTV 객체생성");
 	}
-	public SamsungTV(Speaker speaker) {
-		super();
-		System.out.println("--->SamsunTv(2) 객체생성");
-		this.speaker = speaker;
-	}
-	public SamsungTV(Speaker speaker, int price) {
-		super();
-		System.out.println("--->SamsunTv(3) 객체생성");
-		this.speaker = speaker;
-		this.price = price;
-	}
+//	public SamsungTV(Speaker speaker) {
+//		super();
+//		System.out.println("--->SamsunTv(2) 객체생성");
+//		this.speaker = speaker;
+//	}
+//	public SamsungTV(Speaker speaker, int price) {
+//		super();
+//		System.out.println("--->SamsunTv(3) 객체생성");
+//		this.speaker = speaker;
+//		this.price = price;
+//	}
 	public void powerOn() {
 		System.out.println("SamsungTv---전원킨다.(가격: "+ price +")");
 	}
