@@ -18,6 +18,9 @@
  3. AOP(공통관심사 OR 횡단관심사) Aspect Oriented Programming
  	* 조인 포인트 : 포인트컷이 될수 있는 대상
  	* 포인트컷 : 실제로 조인 포인트 중에서 공통관심사를 적용 받는 대상
+ 	* 어드바이스 : 공통관심사에 해당되는 기능
+ 	* aspect or advisor: 포인트컷 + 어드바이스
+ 	* 위빙 : Aspect가 지정된 객체를 새로운 프록시 객체를 생성하는 과정 ( Aspect가 실제로 실행되는 과정 )
  4. BEAN(강낭콩) 스프링에서 객체를 빈이라 부름
 
 ## 수행 순서[#](#springbook)
@@ -137,7 +140,11 @@ deployment assembly 에서도 jdbc 파일 추가
 
 ### 참고 자료[#](#springbook)
 
+> DI
 * [의존성 주입 관련](https://codevang.tistory.com/312)
 * [의존관계 쉽게 이해하기](https://tecoble.techcourse.co.kr/post/2021-04-27-dependency-injection/)
 * https://cbw1030.tistory.com/m/309
+> MVC - 3tier
 * https://hanna97.tistory.com/entry/Spring-MVC%EC%9D%98-%EA%B8%B0%EB%B3%B8%EA%B5%AC%EC%84%B13-tier
+> AOP
+* https://tram-devlog.tistory.com/entry/Spring-AOP-weaving-proxy
