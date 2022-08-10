@@ -22,7 +22,7 @@
 1. encoding 설정
   * window > prefer... > encoding 검색 > utf-8로 변경
   * xml 수정   
-  	``` 
+  	```xml
 	<!-- 캐릭터 인코딩 필터 설정  -->
 	<!-- 컨트롤러에서 response.setCharacterEncoding()를매번 실행하지 않기 위해 서블릿 필터를 이용해 처리  -->
 	<filter>
@@ -96,14 +96,14 @@
 
 1. xml 방식
 	* 생성자 주입 방식
-	```
+	```xml
 	<bean id="samsungTV" class="polymorphism.SamsungTV" >scope="prototype"
 		<constructor-arg ref="apple"></constructor-arg>
 		<constructor-arg value="270000"></constructor-arg>
 	</bean> 
 	```
 	* 새터 주입 방식
-	```
+	```xml
 	<bean id="samsungTV" class="polymorphism.SamsungTV" >scope="prototype"
 		<property name="speaker" ref="apple"></property>
 		<property name="price" value="27000"></property>
@@ -113,7 +113,7 @@
 2. 어노테이션 방식
 
 	* 초기 설정(xml)
-	```
+	```xml
 	// 어디에 어떤 컴포넌트 @Autowired @Repository @Controller 가있는지 알 수 있게 스캔하는 코드 추가
 	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
 	```
