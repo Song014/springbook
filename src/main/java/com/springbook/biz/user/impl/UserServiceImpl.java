@@ -2,6 +2,8 @@ package com.springbook.biz.user.impl;
 
 import java.util.List;
 
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import com.springbook.biz.user.UserService;
@@ -12,7 +14,9 @@ import lombok.Setter;
 @Service
 @Setter
 public class UserServiceImpl implements UserService {
-
+	
+	
+	
 //	@Setter(onMethod = @__({@Autowired}))
 	private UserDAO dao;
 	
@@ -37,13 +41,14 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserVO getUser(UserVO vo) {
 		// TODO Auto-generated method stub
+		System.out.println(vo +"====service");
 		return dao.getUser(vo);
 	}
 
 	@Override
 	public List<UserVO> getUserList() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getUserList();
 	}
 
 }
