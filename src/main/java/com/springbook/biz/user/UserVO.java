@@ -1,4 +1,4 @@
-package com.springbook.biz.vo;
+package com.springbook.biz.user;
 
 import lombok.Data;
 

@@ -23,6 +23,7 @@ public class BoardDAO {
 	private final String BOARD_DELETE = "DELETE FROM board WHERE seq = ?";
 	private final String BOARD_GET = "SELECT * FROM board WHERE seq = ?";
 	private final String BOARD_LIST = "SELECT * FROM board order by seq desc";
+	private final String BOARD_CNT = "update board set cnt=cnt+1 where seq=?";
 
 	public void insertBoard(BoardVO vo) {
 		try {
@@ -71,8 +72,14 @@ public class BoardDAO {
 
 	public BoardVO getBoard(BoardVO vo) {
 		BoardVO board = null;
+		
 		try {
 			conn = JdbcUtill.getConnection();
+			
+			pstmt = conn.prepareStatement(BOARD_CNT);
+			pstmt.setInt(1, vo.getSeq());
+			pstmt.executeUpdate();
+			
 			pstmt = conn.prepareStatement(BOARD_GET);
 			pstmt.setInt(1, vo.getSeq());
 			rs = pstmt.executeQuery();

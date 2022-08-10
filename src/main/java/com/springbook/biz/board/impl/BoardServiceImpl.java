@@ -46,4 +46,11 @@ public class BoardServiceImpl implements BoardService {
 		return dao.getBoardList();
 	}
 
+//	@Override
+//	public void updateCNT(BoardVO vo) {
+//		// TODO Auto-generated method stub
+//		
+//		dao.updateCNT(vo);
+//	}
+
 }

@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page session="false" %>
 <html>
 <head>
@@ -7,7 +8,8 @@
 <h1>
 	Hello world!  
 </h1>
-${boardList }
+${boardList} 
+
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

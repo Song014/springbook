@@ -13,4 +13,6 @@ public interface BoardService {
 	public BoardVO getBoard(BoardVO vo);
 
 	public List<BoardVO> getBoardList();
+
+//	public void updateCNT(BoardVO vo);
 }

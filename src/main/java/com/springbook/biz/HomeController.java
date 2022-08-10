@@ -28,10 +28,9 @@ public class HomeController {
 		
 		List<BoardVO> boardList = bs.getBoardList();
 		model.addAttribute("boardList",boardList);
-		for(BoardVO list : boardList) {
-			System.out.println(list);
-			
-		}
+//		for(BoardVO list : boardList) {
+//			System.out.println(list);
+//		}
 		
 		
 		return "home";
