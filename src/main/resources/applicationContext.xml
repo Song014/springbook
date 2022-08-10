@@ -2,17 +2,26 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
-<!-- 	<context:component-scan
-		base-package="com.springbook.biz"></context:component-scan> -->
+	<context:component-scan
+		base-package="com.springbook.biz"></context:component-scan>
+		
+	<aop:config>
+		<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"/>
+        <aop:aspect ref="logAdvice">
+            <aop:before pointcut-ref="allPointcut" method="printLog"/>
+        </aop:aspect>
+	</aop:config>
 
-	<bean id="userServiceImpl"
+	<!-- <bean id="userServiceImpl"
 		class="com.springbook.biz.user.impl.UserServiceImpl">
 		<property name="dao" ref="userDAO"></property>
 	</bean>
-	<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>
+	<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean> -->
 
 
 	<!-- <bean id="samsungTV" class="polymorphism.SamsungTV"> scope="prototype" 

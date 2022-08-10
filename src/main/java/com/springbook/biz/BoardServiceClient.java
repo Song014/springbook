@@ -10,30 +10,32 @@ import com.springbook.biz.board.BoardService;
 import com.springbook.biz.board.BoardVO;
 
 public class BoardServiceClient {
-
 	public static void main(String[] args) {
-		AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml");
+
+		AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml"); // 싱글톤 패턴임
 
 		BoardService bs = (BoardService) container.getBean("boardServiceImpl");
+		
+		
 		Scanner sc = new Scanner(System.in);
 		boolean flag = true;
 		while (flag) {
 			int seq = 0;
-			String title ="";
-			String writer ="";
+			String title = "";
+			String writer = "";
 			String Content = "";
 			System.out.println("1.글 작성 2.글 수정 3,글 삭제 4.글 조회 5.전체 조회 0.종료");
 			System.out.println("번호 입력:");
 			int key = sc.nextInt();
 			if (key == 1) {
-				
+
 				System.out.println("제목:");
 				title = sc.next();
 				System.out.println("작성자:");
 				writer = sc.next();
 				System.out.println("내용:");
 				Content = sc.next();
-				
+
 				BoardVO vo = new BoardVO();
 				vo.setTitle(title);
 				vo.setWriter(writer);
@@ -78,7 +80,7 @@ public class BoardServiceClient {
 			} else if (key == 5) {
 				// getList 전체조회
 				List<BoardVO> list = bs.getBoardList();
-				for(BoardVO list2 : list) {
+				for (BoardVO list2 : list) {
 					System.out.println(list2);
 				}
 			} else if (key == 0) {

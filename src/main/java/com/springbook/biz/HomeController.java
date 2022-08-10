@@ -22,12 +22,12 @@ import com.springbook.biz.user.UserVO;
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml");
 
 	@Autowired
 	BoardService bs;
 
-	UserService us = (UserService) container.getBean("userServiceImpl");
+	@Autowired
+	UserService us;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
