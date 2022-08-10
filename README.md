@@ -95,18 +95,35 @@
 ## 의존 주입[#](#springbook)
 
 1. xml 방식
-	![applicationContext.xml](./markdown/img/CunsturtorDI.png)
-	
-	* 새터
-	사진찍어야됨
+	* 생성자 주입 방식
+	```
+	<bean id="samsungTV" class="polymorphism.SamsungTV" >scope="prototype"
+		<constructor-arg ref="apple"></constructor-arg>
+		<constructor-arg value="270000"></constructor-arg>
+	</bean> 
+	```
+	* 새터 주입 방식
+	```
+	<bean id="samsungTV" class="polymorphism.SamsungTV" >scope="prototype"
+		<property name="speaker" ref="apple"></property>
+		<property name="price" value="27000"></property>
+	</bean> 
+	```
+	* 멤버변수 주입방식
 2. 어노테이션 방식
+
+	* 초기 설정(xml)
+	```
+	// 어디에 어떤 컴포넌트 @Autowired @Repository @Controller 가있는지 알 수 있게 스캔하는 코드 추가
+	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
+	```
 
 	* AutoWired
 	* Qualifier
 	
 	* Component : 총
-	* Service : 비지니스 
-	* Repository : 데이터레이어
+	* Service : 비지니스/Service 레이어
+	* Repository : 데이터레이어/DAO 레이어
 	* Controller : mvc 레이어
 	
 	
