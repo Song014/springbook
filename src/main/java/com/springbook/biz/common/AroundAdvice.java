@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
-@Service
+
 @Aspect
 public class AroundAdvice {
 		

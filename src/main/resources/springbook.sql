@@ -34,7 +34,8 @@ CREATE TABLE board (
     cnt     NUMBER(5, 0) DEFAULT 0,
     PRIMARY KEY ( seq )
 );
-
+commit;
+drop table board;
 create sequence board_seq increment by 1 start with 0 MAXVALUE 9999999 MINVALUE 0;
 INSERT INTO board (
     seq,

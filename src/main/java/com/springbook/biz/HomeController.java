@@ -1,13 +1,10 @@
 package com.springbook.biz;
 
 import java.util.List;
-import java.util.Scanner;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,62 +18,64 @@ import com.springbook.biz.user.UserVO;
 @Controller
 public class HomeController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
-	@Autowired
-	BoardService bs;
-
 	@Autowired
 	UserService us;
+	@Autowired
+	BoardService bs;
+	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 
-		List<BoardVO> boardList = bs.getBoardList();
-		model.addAttribute("boardList", boardList);
-		for (BoardVO list : boardList) {
-			System.out.println(list);
-		}
 
-		return "home";
+
+		return "login";
 	}
-
-	@RequestMapping(value = "/user", method = RequestMethod.GET)
-	public String user(Model model) {
-//		UserVO vo = new UserVO();
-//		vo.setId("test");
-//		vo.setPassword("test1234");
-//		UserVO userList = us.getUser(vo);
-//		System.out.println(userList + "====Controller");
-//
-//		List<UserVO> User = us.getUserList();
-//		model.addAttribute("boardList",User);
+	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
+	public String login(HttpServletRequest req, Model model) {
+		
+		String id = req.getParameter("id");
+		String pwd = req.getParameter("pwd");
 		UserVO vo = new UserVO();
-
-//		String id = "";
-//		String pwd = "";
-//		Scanner sc = new Scanner(System.in);
-
-//		System.out.println("아이디 입력:");
-//		id = sc.next();
-//		System.out.println("비번 입력:");
-//		pwd = sc.next();
-
-		vo.setId("test");
-		vo.setPassword("test1234");
-
+		vo.setId(id);
+		vo.setPassword(pwd);
+		
 		UserVO user = us.getUser(vo);
-		model.addAttribute("id", user.getId());
-		model.addAttribute("name", user.getName());
-		model.addAttribute("pwd", user.getPassword());
-		model.addAttribute("role", user.getRole());
-		if (user != null) {
-			System.out.println(user.getName() + "님 환영합니다.");
+		
+		if(user != null) {
+			model.addAttribute("user",user.getId());
+			System.out.println("컨트롤러1");
+			try {
+				System.out.println("컨트롤러2");
+				List<BoardVO> boardList = bs.getBoardList();
+				for(BoardVO list : boardList) {
+					model.addAttribute("list",list);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return "getBoardList";
 		} else {
-			System.out.println("로그인 실패");
+			return "login";
 		}
+	}
+	@RequestMapping(value = "/getBoard.do", method = RequestMethod.GET)
+	public String getBoard(HttpServletRequest req, Model model) {
+		
 
-		return "home";
+		
+		
+		return "getBoard";
+	}
+	@RequestMapping(value = "/getBoardList.do", method = RequestMethod.POST)
+	public String getBoardList(HttpServletRequest req, Model model) {
+		
+		String searchCondition = req.getParameter("searchCondition");
+		String searchKeyword = req.getParameter("searchKeyword");
+		
+		
+		return "getBoardList";
 	}
 
 }
