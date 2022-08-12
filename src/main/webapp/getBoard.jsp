@@ -5,15 +5,8 @@
 
 
 <%
-	// 1. 검색한 게시글 번호 추출
-	String seq = request.getParameter("seq");
-
-	// 2. DB 연동 처리
-	BoardVO vo = new BoardVO();
-	vo.setSeq(Integer.parseInt(seq));
-
-	BoardDAO boardDAO = new BoardDAO();
-	BoardVO board = boardDAO.getBoard(vo);
+	
+	BoardVO board = (BoardVO)session.getAttribute("board");
 
 	//3. 응답 화면 구성
 %>
@@ -26,9 +19,9 @@
 <body>
 	<div align="center">
 		<h1>글 상세</h1>
-		<a href="logout_proc.jsp">Log-out</a>
+		<a href="logout_proc.do">Log-out</a>
 		<hr>
-		<form action="updateBoard_proc.jsp" method="post">
+		<form action="updateBoard.do" method="post">
 			<table border="1" cellpadding="0" cellspacing="0" width="700">
 				
 				<tr>
@@ -64,8 +57,8 @@
 		</form>
 		<hr>
 		<a href="insertBoard.jsp">글 등록</a>&nbsp;&nbsp;&nbsp; <a
-			href="deleteBoard.jsp?seq=<%=board.getSeq()%>">글 삭제</a>&nbsp;&nbsp;&nbsp; <a
-			href="getBoardList.jsp">글 목록</a>
+			href="deleteBoard.do?seq=<%=board.getSeq()%>">글 삭제</a>&nbsp;&nbsp;&nbsp; <a
+			href="getBoardList.do">글 목록</a>
 	</div>
 </body>
 </html>

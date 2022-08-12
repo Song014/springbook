@@ -5,7 +5,7 @@
  
 <%
 	// 1. 사용자 입력 정보 추출
-	request.setCharacterEncoding("EUC-KR");
+	request.setCharacterEncoding("UTF-8");
 	String title = request.getParameter("title");
 	String writer = request.getParameter("writer");
 	String content = request.getParameter("content");
@@ -21,5 +21,5 @@
 	boardDAO.insertBoard(vo);
 	
 	// 3. 화면 네비게이션
-	response.sendRedirect("getBoardList.jsp");
+	response.sendRedirect("getBoardList.do");
 %>

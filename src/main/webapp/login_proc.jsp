@@ -19,8 +19,8 @@
    // 3. 화면 네비게이션
    
    if(user != null){
-      response.sendRedirect("getBoardList.jsp");
+      response.sendRedirect("getBoardList.do");
    }else{
-      response.sendRedirect("login.jsp");
+      response.sendRedirect("login.do");
    }
 %>

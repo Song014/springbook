@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<center>
+	<div align="center">
 		<h1>로그인</h1>
 		<hr>
-		<form action="login_proc.jsp" method="post">
+		<form action="login.do" method="post">
 			<table boarder="1" cellpadding="0" cellspacing="0">
 				<tr>
 					<td bgcolor="oranage">아이디</td>
@@ -26,6 +26,7 @@
 				</tr>
 			</table>
 		</form>
-	</center>
+	</div>
+	
 </body>
 </html>

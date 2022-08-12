@@ -31,51 +31,51 @@ public class HomeController {
 
 		return "login";
 	}
-	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
-	public String login(HttpServletRequest req, Model model) {
-		
-		String id = req.getParameter("id");
-		String pwd = req.getParameter("pwd");
-		UserVO vo = new UserVO();
-		vo.setId(id);
-		vo.setPassword(pwd);
-		
-		UserVO user = us.getUser(vo);
-		
-		if(user != null) {
-			model.addAttribute("user",user.getId());
-			System.out.println("컨트롤러1");
-			try {
-				System.out.println("컨트롤러2");
-				List<BoardVO> boardList = bs.getBoardList();
-				for(BoardVO list : boardList) {
-					model.addAttribute("list",list);
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			return "getBoardList";
-		} else {
-			return "login";
-		}
-	}
-	@RequestMapping(value = "/getBoard.do", method = RequestMethod.GET)
-	public String getBoard(HttpServletRequest req, Model model) {
-		
-
-		
-		
-		return "getBoard";
-	}
-	@RequestMapping(value = "/getBoardList.do", method = RequestMethod.POST)
-	public String getBoardList(HttpServletRequest req, Model model) {
-		
-		String searchCondition = req.getParameter("searchCondition");
-		String searchKeyword = req.getParameter("searchKeyword");
-		
-		
-		return "getBoardList";
-	}
+//	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
+//	public String login(HttpServletRequest req, Model model) {
+//		
+//		String id = req.getParameter("id");
+//		String pwd = req.getParameter("pwd");
+//		UserVO vo = new UserVO();
+//		vo.setId(id);
+//		vo.setPassword(pwd);
+//		
+//		UserVO user = us.getUser(vo);
+//		
+//		if(user != null) {
+//			model.addAttribute("user",user.getId());
+//			System.out.println("컨트롤러1");
+//			try {
+//				System.out.println("컨트롤러2");
+//				List<BoardVO> boardList = bs.getBoardList();
+//				for(BoardVO list : boardList) {
+//					model.addAttribute("list",list);
+//				}
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//			
+//			return "getBoardList";
+//		} else {
+//			return "login";
+//		}
+//	}
+//	@RequestMapping(value = "/getBoard.do", method = RequestMethod.GET)
+//	public String getBoard(HttpServletRequest req, Model model) {
+//		
+//
+//		
+//		
+//		return "getBoard";
+//	}
+//	@RequestMapping(value = "/getBoardList.do", method = RequestMethod.GET)
+//	public String getBoardList(HttpServletRequest req, Model model) {
+//		
+//		String searchCondition = req.getParameter("searchCondition");
+//		String searchKeyword = req.getParameter("searchKeyword");
+//		
+//		
+//		return "getBoardList";
+//	}
 
 }
