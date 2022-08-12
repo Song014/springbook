@@ -12,14 +12,13 @@ import com.springbook.biz.board.BoardVO;
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
-	private BoardDAOSpring dao;
+	private BoardDAO dao;
 
 	@Override
 	public void insertBoard(BoardVO vo) {
 //		 if(vo.getSeq() == 0) {
 //	         throw new IllegalArgumentException("0번 게시물은 등록할 수 없습니다.");
 //	      }
-		dao.insertBoard(vo);
 		dao.insertBoard(vo);
 	}
 
@@ -44,7 +43,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardVO> getBoardList() {
-
+		
 		return dao.getBoardList();
 	}
 
