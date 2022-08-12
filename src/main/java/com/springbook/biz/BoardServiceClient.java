@@ -28,7 +28,8 @@ public class BoardServiceClient {
 			System.out.println("번호 입력:");
 			int key = sc.nextInt();
 			if (key == 1) {
-
+				System.out.println("글번호:");
+				seq = sc.nextInt();
 				System.out.println("제목:");
 				title = sc.next();
 				System.out.println("작성자:");
@@ -37,6 +38,7 @@ public class BoardServiceClient {
 				Content = sc.next();
 
 				BoardVO vo = new BoardVO();
+				vo.setSeq(seq);
 				vo.setTitle(title);
 				vo.setWriter(writer);
 				vo.setContent(Content);
@@ -45,12 +47,12 @@ public class BoardServiceClient {
 			} else if (key == 2) {
 				// update
 				BoardVO vo = new BoardVO();
-				System.out.println("수정할 글 번호:");
+				System.out.println("수정할 글 번호 :");
 				seq = sc.nextInt();
-				System.out.println("수정할 제목:");
+				System.out.println("수정할 제목 :");
 				title = sc.next();
 
-				System.out.println("수정할 내용:");
+				System.out.println("수정할 내용 :");
 				Content = sc.next();
 
 				vo.setSeq(seq);
@@ -72,11 +74,6 @@ public class BoardServiceClient {
 				vo.setSeq(n);
 				BoardVO board = bs.getBoard(vo);
 				System.out.println(board);
-			} else if (key == 3) {
-				List<BoardVO> list = bs.getBoardList();
-				for (BoardVO list2 : list) {
-					System.out.println(list2);
-				}
 			} else if (key == 5) {
 				// getList 전체조회
 				List<BoardVO> list = bs.getBoardList();

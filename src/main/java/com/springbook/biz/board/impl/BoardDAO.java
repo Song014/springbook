@@ -27,7 +27,7 @@ public class BoardDAO {
 
 	public void insertBoard(BoardVO vo) {
 		try {
-			
+			System.out.println("====== insertBoard 기능처리");
 			conn = JdbcUtill.getConnection();
 			pstmt = conn.prepareStatement(BOARD_INSERT);
 			pstmt.setString(1, vo.getTitle());
@@ -44,6 +44,7 @@ public class BoardDAO {
 
 	public void updateBoard(BoardVO vo) {
 		try {
+			System.out.println("====== updateBoard 기능처리");
 			conn = JdbcUtill.getConnection();
 			pstmt = conn.prepareStatement(BOARD_UPDATE);
 			pstmt.setString(1, vo.getTitle());
@@ -59,6 +60,7 @@ public class BoardDAO {
 
 	public void deleteBoard(BoardVO vo) {
 		try {
+			System.out.println("====== deleteBoard 기능처리");
 			conn = JdbcUtill.getConnection();
 			pstmt = conn.prepareStatement(BOARD_DELETE);
 			pstmt.setInt(1, vo.getSeq());
@@ -73,6 +75,7 @@ public class BoardDAO {
 	public BoardVO getBoard(BoardVO vo) {
 		BoardVO board = null;
 		
+		System.out.println("====== getBoard 기능처리");
 		try {
 			conn = JdbcUtill.getConnection();
 			
@@ -104,6 +107,7 @@ public class BoardDAO {
 	public List<BoardVO> getBoardList() {
 		List<BoardVO> boardList = new ArrayList<BoardVO>();
 		try {
+			System.out.println("====== getBoardList 기능처리");
 			conn = JdbcUtill.getConnection();
 			pstmt = conn.prepareStatement(BOARD_LIST);
 			rs = pstmt.executeQuery();

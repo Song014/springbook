@@ -18,21 +18,24 @@ public class UserDAO {
 	private ResultSet rs = null;
 	private final String USER_GET = "select * from users where id =? and password=?";
 	private final String USER_LIST = "select * from users";
+	
 	public UserVO getUser(UserVO vo) {
 		UserVO user = null;
+		
 		try {
 			conn = JdbcUtill.getConnection();
 			pstmt = conn.prepareStatement(USER_GET);
 			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getPassword());
 			rs = pstmt.executeQuery();
+			
 			if(rs.next()) {
 				user = new UserVO();
 				user.setId(rs.getString("id"));
 				user.setName(rs.getString("name"));
 				user.setPassword(rs.getString("password"));
 				user.setRole(rs.getString("role"));
-				System.out.println(user +"====DAO");
+				System.out.println("==== dao 기능처리");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

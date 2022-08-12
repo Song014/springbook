@@ -137,6 +137,35 @@
 jdbc 라이브러리 java bulid path에 추가
 deployment assembly 에서도 jdbc 파일 추가
 
+spring jdbc
+	* JdbcTemplate
+	 * update() => insert, update, delete
+	 * queryForInt(),queryForObject(),query() => select
+
+commons dbcp
+
+## AOP
+
+* 예외 처리시
+`<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog" />`
+
+## Transaction
+
+* AOP 설정
+```
+<tx:advice id="txAdvice" transaction-manager="txManager">
+	<tx:attributes>
+		<tx:method name="get*" read-only="true"/>
+		<tx:method name="*"/>
+	</tx:attributes>
+</tx:advice>
+
+<aop:config>
+		<aop:pointcut expression="execution(* com.springbook.biz..impl.*(..))" id="txPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+</aop:config>
+```
+
 
 ### 참고 자료[#](#springbook)
 
